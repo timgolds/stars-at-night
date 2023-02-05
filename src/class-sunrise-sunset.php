@@ -100,7 +100,7 @@ class NGC2244_Sunrise_Sunset {
         $twilight = $todayTimestamp + $delta + $tzOffset;
         $dateTime = new DateTime ();
         $dateTime = $dateTime->setTimestamp ( $twilight );
-        $twilightStr = $dateTime->format ( 'H:i' );
+        $twilightStr = $dateTime->format ( 'h:i A' );
         return $twilightStr;
     }
 }
