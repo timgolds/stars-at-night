@@ -289,7 +289,7 @@ class Stars_At_Night_Manager {
         }
         $sunMoonTable .= '<thead><tr><td align="center" valign="middle" colspan="8" >Astronomical Times for ' .
                  $this->sanitized_name . ' (' . $this->sanitized_lat . ', ' . $this->sanitized_long .
-                 ')<br>' . 'Starting ' . $this->startDate->format ( 'd M Y' ) . ', for the next ' .
+                 ')<br>' . 'Starting ' . $this->startDate->format ( 'M d Y' ) . ', for the next ' .
                  $this->sanitized_days . $days . '</td></tr>';
         $sunMoonTable .= '<tr><td align="center" rowspan="2" valign="middle">Date</td>';
         $sunMoonTable .= '<td align="center">Morning</td>';
@@ -319,7 +319,7 @@ class Stars_At_Night_Manager {
             $moonriseMoonset->calculate_moon_times ( $this->sanitized_lat, $this->sanitized_long, 
                     $moonTzOffset, $this->sanitized_timezone, $date );
             // convert date for table rendering
-            $dateStr = $date->format ( 'd M Y' );
+            $dateStr = $date->format ( 'M d Y' );
             // get the tables
             $sunMoonTable .= '<tr><td>' . $dateStr . '</td><td>' .
                      $this->sunriseSunset->morningTwilight . '</td><td>';
@@ -336,7 +336,7 @@ class Stars_At_Night_Manager {
                 error_log ( 'image file:' . $imageFile );
                 error_log ( 
                         'dayCount ' . $dayCount . ' age: ' . $age . ' calendar: ' .
-                                 $date->format ( 'Y M d' ) );
+                                 $date->format ( 'M d Y' ) );
                 $sunMoonTable .= '<td rowspan="3"><a href="' . plugin_dir_url ( __FILE__ ) .
                          '../images/Moon-' . $imageCount .
                          '-large.jpg"><img class="ngc2244_stars_at_night_lunar" src="' . $imageFile .
